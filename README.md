@@ -1,50 +1,103 @@
-# Visual-Maze-Solver-using-BFS-and-DFS
+# 🧩 Visual Maze Solver using BFS & DFS
 
-# Maze Solver using BFS and DFS
+A complete Python-based maze-solving visualizer using **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**.  
+This project includes static mazes, dynamic mazes, custom maze input, animation, and side-by-side comparison of BFS vs DFS.
 
-## Overview
-This project visualizes the process of solving a randomly generated maze using two different pathfinding algorithms: **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**. The solution is animated side by side to compare both algorithms dynamically.
+---
 
-## Features
-- Generates a random maze with obstacles.
-- Implements **BFS** and **DFS** to find a path from start to goal.
-- Visualizes both algorithms side by side for comparison.
-- Uses **Matplotlib** for real-time animation.
+## 📌 Overview
 
-## Installation
-### Prerequisites
-Ensure you have Python installed on your system. You can check by running:
-```sh
-python --version
+This project helps you understand how BFS and DFS explore a maze differently:
+
+- **BFS → Always finds the shortest path**
+- **DFS → May find a path, but not guaranteed shortest**
+- **Animated visualization** shows algorithm behaviour step-by-step.
+
+You can load:
+- Predefined mazes  
+- Random mazes  
+- Interactive user-generated mazes  
+
+---
+
+## 📁 Project Structure
+
+```bash
+│
+├── maze20x20.py # Solves a predefined 20×20 maze
+├── mazesolver.py # Simple BFS & DFS example
+├── newmaze.py # Animated BFS/DFS solver with visited visualization
+├── visualmaze.py # User-input maze creator and solver
+└── README.md
 ```
-If Python is not installed, download and install it from [python.org](https://www.python.org/).
 
-### Install Dependencies
-Run the following command to install the required libraries:
-```sh
-pip install matplotlib numpy
+---
+
+## 🚀 Features
+
+### ✔ BFS Implementation
+- Finds shortest path  
+- Uses queue  
+- Tracks visited nodes  
+- Can animate visited cells + final path  
+
+### ✔ DFS Implementation
+- Uses recursion / stack  
+- Explores deep paths first  
+- Helps compare behaviour with BFS  
+
+### ✔ Visualization
+- Console visualization  
+- Color-coded path + visited nodes  
+- Optional animation speed control  
+
+### ✔ Interactive Maze
+- Enter rows/columns  
+- Enter each row manually  
+- Useful for testing custom patterns  
+
+---
+
+## 🧠 Algorithms Explained
+
+### **1. Breadth-First Search (BFS)**  
+BFS expands level-by-level.  
+Perfect for shortest paths in grids.
+
+Steps:
+1. Add start to queue  
+2. Pop → Explore neighbors  
+3. Mark visited  
+4. Stop when goal reached  
+5. Backtrack using parent dictionary to build final path  
+
+---
+
+### **2. Depth-First Search (DFS)**  
+DFS explores deep in one direction before checking others.
+
+Steps:
+1. Start recursion at start cell  
+2. Move through valid neighbors  
+3. Backtrack on dead ends  
+4. Stop when goal found  
+
+DFS does **not** guarantee shortest path.
+
+---
+
+## ▶️ How to Run the Programs
+
+### Run the 20×20 maze solver
+```bash
+python maze20x20.py
 ```
-
-## Usage
-Run the script with the following command:
-```sh
+### Create + solve your own maze
+```bash
 python visualmaze.py
 ```
-You will be prompted to enter the number of rows and columns for the maze.
-
-### Example Output
-- The **left plot** shows the BFS pathfinding process.
-- The **right plot** shows the DFS pathfinding process.
-- Walls are represented in **black**.
-- The **start** position is **green**, and the **goal** is **red**.
-- The paths explored by each algorithm are dynamically visualized.
-
 ## Contributors
 1. Soujanya S P
 2. Kushi M Yarnal
 
-## Future Improvements
-- Support for weighted graphs with **Dijkstra's algorithm**.
-- More advanced maze generation techniques.
-- Integration with **Tkinter or PyGame** for an interactive UI.
 
